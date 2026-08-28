@@ -1,0 +1,28 @@
+:root {
+  --bone:   #f3eee4;
+  --bone-2: #ebe4d4;
+  --bone-3: #ded4bf;
+  --ink:       #1a1f1a;
+  --ink-soft:  #2c332b;
+  --ink-mute:  #6a6f64;
+  --ink-faint: #9a9d92;
+  --agave-deep: #1f3a32;
+  --agave:      #4f6b5b;
+  --agave-pale: #c2cdb9;
+  --terracotta: #b8552d;
+  --rule:        rgba(26, 31, 26, 0.14);
+  --rule-strong: rgba(26, 31, 26, 0.28);
+  --surface-page:      var(--bone);
+  --surface-raised:    var(--bone-2);
+  --surface-sunken:    var(--bone-3);
+  --surface-inverse:   var(--ink);
+  --text-strong:       var(--ink);
+  --text-body:         var(--ink-soft);
+  --text-muted:        var(--ink-mute);
+  --text-on-inverse:   var(--bone);
+  --accent:            var(--terracotta);
+  --accent-brand:      var(--agave-deep);
+  --border-hairline:   var(--rule);
+  --border-card:       var(--rule-strong);
+  --focus-ring:        var(--agave-deep);
+}
