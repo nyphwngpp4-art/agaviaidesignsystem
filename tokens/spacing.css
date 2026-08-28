@@ -1,0 +1,25 @@
+:root {
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  22px;
+  --space-6:  28px;
+  --space-7:  36px;
+  --space-8:  48px;
+  --space-9:  64px;
+  --space-10: 80px;
+  --space-11: 96px;
+  --space-12: 110px;
+  --page-gutter:      60px;
+  --page-gutter-sm:   28px;
+  --stamp-col:        80px;
+  --section-y:        80px;
+  --grid-gap:         48px;
+  --content-max:      1040px;
+  --radius-none: 0;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-pill: 999px;
+  --hairline: 1px;
+}
