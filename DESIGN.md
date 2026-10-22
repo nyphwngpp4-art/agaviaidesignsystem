@@ -12,6 +12,19 @@ Sentence case for headlines. Uppercase only for monospace labels.
 
 No emoji.
 
+### Cut secondary text
+
+Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout.
+
+Concrete limits:
+
+- At most one mono label per section.
+- No version numbers, catalog tags (e.g. `AGV—01`, "Diagram 03 · v1.4") or scroll cues.
+- No repeated kickers. A ◇ kicker above every heading is a pattern to remove, not a style.
+- Headlines stand alone. No one-line subtitle under a heading unless the section fails without it; if it does, fix the layout first.
+
+Applies to agaviai.com and all demo sites.
+
 ## Wordmark
 
 Set **Agavi.** in Newsreader. Ink for the letters. Terracotta for the period.
