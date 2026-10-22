@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Ink / text" subtitle="Near-black greens for text and dark surfaces" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body { margin: 0; font-family: var(--font-mono); background: var(--bone); }
+    .row { display: grid; grid-template-columns: repeat(4, 1fr); height: 150px; }
+    .sw { display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box; }
+    .name { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bone); }
+    .hex { font-size: 10.5px; color: var(--agave-pale); margin-top: 3px; }
+    .i  { background: var(--ink); }
+    .is { background: var(--ink-soft); }
+    .im { background: var(--ink-mute); }
+    .if { background: var(--ink-faint); }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw i"><span class="name">Ink</span><span class="hex">#1a1f1a</span></div>
+    <div class="sw is"><span class="name">Ink-soft</span><span class="hex">#2c332b</span></div>
+    <div class="sw im"><span class="name">Ink-mute</span><span class="hex">#6a6f64</span></div>
+    <div class="sw if"><span class="name">Ink-faint</span><span class="hex">#9a9d92</span></div>
+  </div>
+</body>
+</html>

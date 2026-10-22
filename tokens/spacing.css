@@ -1,4 +1,11 @@
+/* Agavi — Spacing, radii, layout tokens
+   The layout is a printed grid: generous 60px page gutters, an 80px
+   "stamp column" on the left of section heads, sharp corners everywhere
+   except pill controls (999px). Cards are grid cells divided by hairlines,
+   NOT rounded floating boxes. */
+
 :root {
+  /* ── Spacing scale ── */
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -11,15 +18,21 @@
   --space-10: 80px;
   --space-11: 96px;
   --space-12: 110px;
-  --page-gutter:      60px;
-  --page-gutter-sm:   28px;
-  --stamp-col:        80px;
-  --section-y:        80px;
+
+  /* ── Layout ── */
+  --page-gutter:      60px;  /* desktop side padding */
+  --page-gutter-sm:   28px;  /* mobile side padding */
+  --stamp-col:        80px;  /* left index column in section heads */
+  --section-y:        80px;  /* vertical rhythm between sections */
   --grid-gap:         48px;
   --content-max:      1040px;
-  --radius-none: 0;
-  --radius-sm:   6px;
-  --radius-md:   10px;
-  --radius-pill: 999px;
+
+  /* ── Radii ── (mostly sharp) ── */
+  --radius-none: 0;      /* cards, tiles, plates — square by default */
+  --radius-sm:   6px;    /* small controls (hamburger, chips) */
+  --radius-md:   10px;   /* icon wells */
+  --radius-pill: 999px;  /* buttons, tags, badges, avatars */
+
+  /* ── Hairline weight ── */
   --hairline: 1px;
 }

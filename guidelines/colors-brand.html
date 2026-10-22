@@ -1,0 +1,29 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Agave & terracotta" subtitle="Brand green + the single accent" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body { margin: 0; font-family: var(--font-mono); background: var(--bone); }
+    .row { display: grid; grid-template-columns: repeat(4, 1fr); height: 150px; }
+    .sw { display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box; }
+    .name { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hex { font-size: 10.5px; margin-top: 3px; }
+    .ad { background: var(--agave-deep); }
+    .a  { background: var(--agave); }
+    .ap { background: var(--agave-pale); }
+    .t  { background: var(--terracotta); }
+    .light .name { color: var(--bone); } .light .hex { color: var(--agave-pale); }
+    .dark .name { color: var(--ink); } .dark .hex { color: var(--ink-soft); }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw ad light"><span class="name">Agave-deep</span><span class="hex">#1f3a32</span></div>
+    <div class="sw a light"><span class="name">Agave</span><span class="hex">#4f6b5b</span></div>
+    <div class="sw ap dark"><span class="name">Agave-pale</span><span class="hex">#c2cdb9</span></div>
+    <div class="sw t light"><span class="name">Terracotta</span><span class="hex">#b8552d · accent</span></div>
+  </div>
+</body>
+</html>

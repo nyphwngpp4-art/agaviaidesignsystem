@@ -1,17 +1,33 @@
+/* Agavi — Color tokens
+   An editorial "paper" palette: warm bone stock, near-black ink,
+   deep agave green, and a single terracotta accent. No pure white,
+   no pure black, no blue. Sharp and printed, never neon. */
+
 :root {
-  --bone:   #f3eee4;
-  --bone-2: #ebe4d4;
-  --bone-3: #ded4bf;
-  --ink:       #1a1f1a;
-  --ink-soft:  #2c332b;
-  --ink-mute:  #6a6f64;
-  --ink-faint: #9a9d92;
-  --agave-deep: #1f3a32;
-  --agave:      #4f6b5b;
-  --agave-pale: #c2cdb9;
-  --terracotta: #b8552d;
-  --rule:        rgba(26, 31, 26, 0.14);
-  --rule-strong: rgba(26, 31, 26, 0.28);
+  /* ── Bone / paper surfaces (warm off-whites) ── */
+  --bone:   #f3eee4; /* page background */
+  --bone-2: #ebe4d4; /* raised / featured panels, alt sections */
+  --bone-3: #ded4bf; /* deepest paper — hovered controls, hairline fills */
+
+  /* ── Ink (text + dark surfaces) ── */
+  --ink:       #1a1f1a; /* primary text, dark CTA blocks */
+  --ink-soft:  #2c332b; /* secondary body text */
+  --ink-mute:  #6a6f64; /* labels, captions, meta */
+  --ink-faint: #9a9d92; /* faintest text, disabled */
+
+  /* ── Agave green (brand hue) ── */
+  --agave-deep: #1f3a32; /* headings emphasis, primary fills, quotes */
+  --agave:      #4f6b5b; /* mid green — list markers, secondary accents */
+  --agave-pale: #c2cdb9; /* on-dark muted text, soft fills */
+
+  /* ── Terracotta (the one accent) ── */
+  --terracotta: #b8552d; /* the dot, diamond ◇, badges, active states */
+
+  /* ── Hairlines / rules (structural borders) ── */
+  --rule:        rgba(26, 31, 26, 0.14); /* standard dividing lines */
+  --rule-strong: rgba(26, 31, 26, 0.28); /* card / grid outer borders */
+
+  /* ── Semantic aliases ── */
   --surface-page:      var(--bone);
   --surface-raised:    var(--bone-2);
   --surface-sunken:    var(--bone-3);

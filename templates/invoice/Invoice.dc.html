@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Invoice" description="Client-facing, printable invoice in the editorial bone-and-ink identity, with Stripe pay-online buttons." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html,body{margin:0;}
+  body{background:#e7dfce;font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:40px 16px;}
+  @media print{ html,body{background:#ffffff;padding:0;} @page{ margin:14mm; } }
+</style>
+</helmet>
+
+<div style="width:816px;max-width:100%;margin:0 auto;background:#f3eee4;border:1px solid rgba(26,31,26,0.28);color:#1a1f1a;box-sizing:border-box;">
+  <div style="padding:56px 60px 48px;">
+
+    <!-- ═══ HEADER · STAMPED ═══ -->
+    <sc-if value="{{ isStamped }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:76px 1fr;gap:36px;align-items:start;">
+        <div style="border-right:1px solid rgba(26,31,26,0.14);padding-top:4px;min-height:96px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#6a6f64;line-height:1.9;">AGV<br>&middot;<br>INV</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;">
+          <div>
+            <div style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:26px;letter-spacing:-0.01em;line-height:1;">Agavi<span style="color:#b8552d;">.</span></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#6a6f64;margin-top:10px;">Operational intelligence, installed</div>
+          </div>
+          <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+            <sc-if value="{{ showMotif }}" hint-placeholder-val="{{ true }}">
+              <svg width="84" height="53" viewBox="40 110 455 290" fill="none" style="display:block;opacity:0.5;">
+                <g transform="translate(260 380)" stroke="#1f3a32" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+                  <path d="M -22 0 Q -110 -50 -200 -90 Q -110 -20 22 0"></path>
+                  <path d="M -22 0 Q -135 -85 -180 -150 Q -100 -55 22 0"></path>
+                  <path d="M -22 0 Q -110 -130 -130 -200 Q -70 -75 22 0"></path>
+                  <path d="M -22 0 Q -70 -160 -75 -230 Q -35 -90 22 0"></path>
+                  <path d="M -22 0 Q -25 -180 -20 -250 Q 0 -95 22 0"></path>
+                  <path d="M -22 0 Q 25 -180 35 -250 Q 12 -95 22 0"></path>
+                  <path d="M -22 0 Q 70 -160 90 -230 Q 30 -90 22 0"></path>
+                  <path d="M -22 0 Q 110 -130 145 -200 Q 65 -75 22 0"></path>
+                  <path d="M -22 0 Q 135 -85 195 -150 Q 95 -55 22 0"></path>
+                  <path d="M -22 0 Q 110 -50 215 -90 Q 110 -20 22 0"></path>
+                  <path d="M -22 0 Q 0 -130 0 -250" stroke-width="1.1" opacity="0.65"></path>
+                </g>
+              </svg>
+            </sc-if>
+            <div style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:38px;letter-spacing:-0.02em;line-height:0.9;">Invoice</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ═══ HEADER · CLEAN ═══ -->
+    <sc-if value="{{ isClean }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;padding-bottom:8px;">
+        <sc-if value="{{ showMotif }}" hint-placeholder-val="{{ true }}">
+          <svg width="118" height="75" viewBox="40 110 455 290" fill="none" style="display:inline-block;opacity:0.5;margin-bottom:14px;">
+            <g transform="translate(260 380)" stroke="#1f3a32" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M -22 0 Q -110 -50 -200 -90 Q -110 -20 22 0"></path>
+              <path d="M -22 0 Q -135 -85 -180 -150 Q -100 -55 22 0"></path>
+              <path d="M -22 0 Q -110 -130 -130 -200 Q -70 -75 22 0"></path>
+              <path d="M -22 0 Q -70 -160 -75 -230 Q -35 -90 22 0"></path>
+              <path d="M -22 0 Q -25 -180 -20 -250 Q 0 -95 22 0"></path>
+              <path d="M -22 0 Q 25 -180 35 -250 Q 12 -95 22 0"></path>
+              <path d="M -22 0 Q 70 -160 90 -230 Q 30 -90 22 0"></path>
+              <path d="M -22 0 Q 110 -130 145 -200 Q 65 -75 22 0"></path>
+              <path d="M -22 0 Q 135 -85 195 -150 Q 95 -55 22 0"></path>
+              <path d="M -22 0 Q 110 -50 215 -90 Q 110 -20 22 0"></path>
+              <path d="M -22 0 Q 0 -130 0 -250" stroke-width="1.1" opacity="0.65"></path>
+            </g>
+          </svg>
+        </sc-if>
+        <div style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:30px;letter-spacing:-0.01em;line-height:1;">Agavi<span style="color:#b8552d;">.</span></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:#6a6f64;margin-top:14px;">Invoice</div>
+      </div>
+    </sc-if>
+
+    <!-- ═══ META GRID ═══ -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border:1px solid rgba(26,31,26,0.28);margin-top:40px;">
+      <div style="padding:16px 18px;border-right:1px solid rgba(26,31,26,0.14);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Invoice no.</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1a1f1a;margin-top:8px;">AGV&middot;001</div>
+      </div>
+      <div style="padding:16px 18px;border-right:1px solid rgba(26,31,26,0.14);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Issued</div>
+        <div style="font-size:14px;color:#2c332b;margin-top:8px;">July 10, 2026</div>
+      </div>
+      <div style="padding:16px 18px;border-right:1px solid rgba(26,31,26,0.14);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Due</div>
+        <div style="font-size:14px;color:#2c332b;margin-top:8px;">July 17, 2026</div>
+      </div>
+      <div style="padding:16px 18px;background:#ebe4d4;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Due now</div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:20px;color:#1f3a32;margin-top:6px;letter-spacing:-0.01em;">$800.00</div>
+      </div>
+    </div>
+
+    <!-- ═══ BILL TO ═══ -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(26,31,26,0.28);border-top:none;">
+      <div style="padding:18px;border-right:1px solid rgba(26,31,26,0.14);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">From</div>
+        <div style="font-size:14px;line-height:1.6;color:#2c332b;margin-top:10px;">Agavi AI LLC<br>Gilbert, Arizona<br>hello@agaviai.com</div>
+      </div>
+      <div style="padding:18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Bill to</div>
+        <div style="font-size:14px;line-height:1.6;color:#2c332b;margin-top:10px;">Client Name<br>Company, LLC<br>name@company.com</div>
+      </div>
+    </div>
+
+    <!-- ═══ LINE ITEMS ═══ -->
+    <div style="margin-top:40px;">
+      <div style="display:grid;grid-template-columns:1fr 150px 130px;padding:0 4px 12px;border-bottom:1px solid rgba(26,31,26,0.28);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Description</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Terms</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;text-align:right;">Amount</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 150px 130px;padding:18px 4px;border-bottom:1px solid rgba(26,31,26,0.14);align-items:baseline;">
+        <div>
+          <div style="font-size:15px;font-weight:500;color:#1a1f1a;">Operational intelligence, setup &amp; build</div>
+          <div style="font-size:13px;color:#6a6f64;margin-top:5px;line-height:1.5;">Assess. Align. Architect. Activate. Amplify. Scoped and delivered on-site.</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6a6f64;">One time</div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:19px;color:#1a1f1a;text-align:right;letter-spacing:-0.01em;">$800.00</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 150px 130px;padding:18px 4px;border-bottom:1px solid rgba(26,31,26,0.14);align-items:baseline;">
+        <div>
+          <div style="font-size:15px;font-weight:500;color:#1a1f1a;">Operating layer retainer</div>
+          <div style="font-size:13px;color:#6a6f64;margin-top:5px;line-height:1.5;">Ongoing tuning, monitoring, and support for the installed system.</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6a6f64;">Monthly</div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:19px;color:#1a1f1a;text-align:right;letter-spacing:-0.01em;">$125.00<span style="font-size:12px;color:#6a6f64;"> / mo</span></div>
+      </div>
+    </div>
+
+    <!-- ═══ TOTALS ═══ -->
+    <div style="display:flex;justify-content:flex-end;margin-top:28px;">
+      <div style="width:300px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:10px 4px;">
+          <div style="font-size:14px;color:#2c332b;">Subtotal due now</div>
+          <div style="font-family:'Newsreader',Georgia,serif;font-size:16px;color:#1a1f1a;">$800.00</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 4px;border-top:1px solid rgba(26,31,26,0.28);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6a6f64;">Total due now</div>
+          <div style="font-family:'Newsreader',Georgia,serif;font-size:28px;color:#1f3a32;letter-spacing:-0.02em;">$800.00</div>
+        </div>
+        <sc-if value="{{ showRecurring }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:10px 4px;">
+            <div style="font-size:13px;color:#6a6f64;"><span style="color:#b8552d;">&#9670;</span> Then, recurring</div>
+            <div style="font-family:'Newsreader',Georgia,serif;font-size:16px;color:#2c332b;">$125.00 / month</div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- ═══ PAY ONLINE ═══ -->
+    <sc-if value="{{ showPay }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:36px;background:#ebe4d4;border:1px solid rgba(26,31,26,0.28);padding:26px 28px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6a6f64;"><span style="color:#b8552d;">&#9670;</span> Pay online</div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:16px;color:#2c332b;margin-top:8px;line-height:1.45;">Secure payment through Stripe. Choose the charge that applies to this invoice.</div>
+
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:20px;border-top:1px solid rgba(26,31,26,0.14);">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(26,31,26,0.14);">
+            <div>
+              <div style="font-size:14px;font-weight:500;color:#1a1f1a;">Setup &amp; build</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6f64;margin-top:3px;">One time &middot; $800.00</div>
+            </div>
+            <a href="https://buy.stripe.com/fZu8wH62C69lgeHbhlcEw01" target="_blank" rel="noopener" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:#1a1f1a;color:#f3eee4;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.005em;text-decoration:none;padding:11px 18px;border-radius:999px;" style-hover="background:#2c332b;">Pay $800 <span style="color:#c2cdb9;">&#8594;</span></a>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(26,31,26,0.14);">
+            <div>
+              <div style="font-size:14px;font-weight:500;color:#1a1f1a;">Setup &amp; build, lite</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6f64;margin-top:3px;">One time &middot; $400.00</div>
+            </div>
+            <a href="https://buy.stripe.com/dRm3cn2QqapBe6z3OTcEw02" target="_blank" rel="noopener" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:#1a1f1a;color:#f3eee4;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.005em;text-decoration:none;padding:11px 18px;border-radius:999px;" style-hover="background:#2c332b;">Pay $400 <span style="color:#c2cdb9;">&#8594;</span></a>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;">
+            <div>
+              <div style="font-size:14px;font-weight:500;color:#1a1f1a;">Operating layer retainer</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6f64;margin-top:3px;">Recurring &middot; $125.00 / month</div>
+            </div>
+            <a href="https://buy.stripe.com/7sY9ALaiSdBN4vZ4SXcEw00" target="_blank" rel="noopener" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:#1f3a32;color:#f3eee4;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.005em;text-decoration:none;padding:11px 18px;border-radius:999px;" style-hover="background:#2c332b;">Start retainer <span style="color:#c2cdb9;">&#8594;</span></a>
+          </div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#9a9d92;margin-top:18px;line-height:1.6;">Viewing a printed copy? Tap the pay buttons in your emailed invoice, or reply to request a payment link.</div>
+      </div>
+    </sc-if>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div style="margin-top:40px;padding-top:22px;border-top:1px solid rgba(26,31,26,0.28);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#6a6f64;line-height:1.9;">
+        <div><span style="color:#b8552d;">&#9670;</span> Payment due within 7 days of issue.</div>
+        <div><span style="color:#b8552d;">&#9670;</span> Questions: hello@agaviai.com</div>
+      </div>
+      <div style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:17px;color:#1f3a32;">Thank you<span style="color:#b8552d;">.</span></div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 900, &quot;height&quot;: 1200 },
+  &quot;variant&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Stamped&quot;, &quot;Clean&quot;], &quot;default&quot;: &quot;Stamped&quot;, &quot;tsType&quot;: &quot;'Stamped' | 'Clean'&quot;, &quot;section&quot;: &quot;Layout&quot; },
+  &quot;showMotif&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; },
+  &quot;showPay&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Payment&quot; },
+  &quot;showRecurring&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Payment&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.variant || 'Stamped';
+    return {
+      isStamped: v === 'Stamped',
+      isClean: v === 'Clean',
+      showMotif: this.props.showMotif !== false,
+      showPay: this.props.showPay !== false,
+      showRecurring: this.props.showRecurring !== false,
+    };
+  }
+}
+</script>
+</body>
+</html>

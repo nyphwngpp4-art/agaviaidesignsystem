@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agavi — Stripe brand assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#f3eee4; --bone-2:#ebe4d4; --bone-3:#ded4bf;
+    --ink:#1a1f1a; --ink-soft:#2c332b; --ink-mute:#6a6f64;
+    --agave-deep:#1f3a32; --agave-pale:#c2cdb9; --terracotta:#b8552d;
+    --rule:rgba(26,31,26,.14); --rule-strong:rgba(26,31,26,.28);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bone);color:var(--ink);font-family:"Inter Tight",sans-serif;
+       -webkit-font-smoothing:antialiased;padding:64px 60px 96px;}
+  a{color:var(--terracotta);}
+  .wrap{max-width:1040px;margin:0 auto;}
+  .kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);}
+  .kicker b{color:var(--terracotta);font-weight:500;}
+  h1{font-family:"Newsreader",serif;font-weight:400;font-size:52px;line-height:1.02;letter-spacing:-.02em;margin:14px 0 10px;}
+  h1 em{font-style:italic;color:var(--agave-deep);}
+  .lede{font-family:"Newsreader",serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:62ch;margin:0 0 40px;}
+  .stamp{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);}
+
+  section{border-top:1px solid var(--rule-strong);padding-top:26px;margin-top:48px;}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;}
+  .sechead h2{font-family:"Newsreader",serif;font-weight:400;font-size:30px;letter-spacing:-.015em;margin:0;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--rule-strong);}
+  .cell{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+  .cell:nth-child(3n){border-right:none;}
+  .swatch{display:flex;align-items:center;justify-content:center;min-height:220px;padding:30px;}
+  .sw-dark{background:var(--agave-deep);}
+  .sw-bone{background:var(--bone);}
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;border-top:1px solid var(--rule);background:var(--bone);}
+  .meta .name{font-weight:600;font-size:13px;}
+  .meta .name span{color:var(--ink-mute);font-weight:400;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;display:block;margin-top:3px;}
+  .dl{font-family:"Inter Tight",sans-serif;font-size:12px;font-weight:500;letter-spacing:.005em;
+      border:1px solid var(--ink);background:var(--ink);color:var(--bone);border-radius:999px;
+      padding:8px 14px;cursor:pointer;white-space:nowrap;transition:opacity .2s;}
+  .dl:hover{opacity:.82;}
+
+  .render{max-width:100%;height:auto;display:block;}
+  .canv-wrap{display:flex;align-items:center;justify-content:center;}
+
+  .stripe-mock{border:1px solid var(--rule-strong);max-width:520px;}
+  .sm-head{background:var(--agave-deep);color:var(--bone);padding:28px 30px 32px;text-align:left;}
+  .sm-logo{max-height:104px;margin-bottom:22px;display:block;}
+  .sm-amt{font-family:"Inter Tight";font-weight:600;font-size:34px;letter-spacing:-.01em;}
+  .sm-due{color:var(--agave-pale);font-size:13px;margin-top:6px;}
+  .sm-body{background:#fff;padding:24px 30px;font-size:14px;color:var(--ink-soft);}
+  .sm-row{display:flex;gap:32px;padding:4px 0;}
+  .sm-row .k{color:var(--ink-mute);width:64px;}
+
+  ul.notes{list-style:none;padding:0;margin:0;}
+  ul.notes li{position:relative;padding-left:26px;margin-bottom:14px;font-size:15px;line-height:1.55;color:var(--ink-soft);max-width:74ch;}
+  ul.notes li::before{content:"\25C7";position:absolute;left:0;top:1px;color:var(--terracotta);font-size:12px;}
+  ul.notes li b{color:var(--ink);font-weight:600;}
+  code{font-family:"JetBrains Mono",monospace;font-size:.88em;background:var(--bone-2);padding:2px 6px;border-radius:4px;color:var(--agave-deep);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">AGV&mdash;07 &nbsp;/&nbsp; STRIPE BRANDING <b>&#9670;</b></div>
+  <h1>The agave mark, <em>lightened for Stripe</em></h1>
+  <p class="lede">Built from the site&rsquo;s agave line motif. A light version reads on your dark agave brand header; the icon fills Stripe&rsquo;s square slot; the lockup pairs the plant with the Agavi wordmark and its terracotta period.</p>
+
+  <section>
+    <div class="sechead"><span class="stamp">AGV&mdash;07.1</span><h2>In context</h2></div>
+    <div class="stripe-mock">
+      <div class="sm-head">
+        <img class="sm-logo" id="mockLogo" alt="Agavi">
+        <div class="sm-amt">$5,000.00</div>
+        <div class="sm-due">Due July 17, 2026</div>
+      </div>
+      <div class="sm-body">
+        <div class="sm-row"><span class="k">To</span><span>Example Name</span></div>
+        <div class="sm-row"><span class="k">From</span><span>Agavi AI LLC</span></div>
+        <div class="sm-row"><span class="k">Invoice</span><span>#TEST-01234</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><span class="stamp">AGV&mdash;07.2</span><h2>Downloadable assets</h2></div>
+    <div class="grid" id="assetGrid"></div>
+  </section>
+
+  <section>
+    <div class="sechead"><span class="stamp">AGV&mdash;07.3</span><h2>Staying on brand in Stripe</h2></div>
+    <ul class="notes">
+      <li><b>Icon slot &rarr; the agave.</b> Upload <code>agavi-icon-light.png</code>. The plant reads as a distinctive square mark in the small places Stripe uses the icon.</li>
+      <li><b>Logo slot &rarr; the lockup.</b> Upload <code>agavi-lockup-light.png</code> and tick <b>&ldquo;Prefer logo over icon&rdquo;</b> so the plant + wordmark shows on invoices and the payment page.</li>
+      <li><b>Use light, not dark.</b> Your brand color <code>#1f3a32</code> makes the header dark, so the light bone versions are the ones to upload. The dark versions are for anything on white.</li>
+      <li><b>Colors are already right.</b> Brand color <code>#1f3a32</code> (agave&#8209;deep) + accent <code>#b8552d</code> (terracotta) match the system exactly &mdash; keep them.</li>
+      <li><b>Keep the terracotta period.</b> It&rsquo;s the one distinguishing mark of the wordmark; every lockup here preserves it.</li>
+      <li><b>Clear space is baked in.</b> Each PNG includes padding around the mark so Stripe won&rsquo;t crop it tight.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+const C = { bone:"#f3eee4", agave:"#1f3a32", terracotta:"#b8552d" };
+const S = 4; // export supersampling
+
+function motifSVG(stroke, sw){
+  const p = [
+    "M -22 0 Q -110 -50 -200 -90 Q -110 -20 22 0",
+    "M -22 0 Q -135 -85 -180 -150 Q -100 -55 22 0",
+    "M -22 0 Q -110 -130 -130 -200 Q -70 -75 22 0",
+    "M -22 0 Q -70 -160 -75 -230 Q -35 -90 22 0",
+    "M -22 0 Q -25 -180 -20 -250 Q 0 -95 22 0",
+    "M -22 0 Q 25 -180 35 -250 Q 12 -95 22 0",
+    "M -22 0 Q 70 -160 90 -230 Q 30 -90 22 0",
+    "M -22 0 Q 110 -130 145 -200 Q 65 -75 22 0",
+    "M -22 0 Q 135 -85 195 -150 Q 95 -55 22 0",
+    "M -22 0 Q 110 -50 215 -90 Q 110 -20 22 0"
+  ].map(d=>`<path d="${d}"></path>`).join("");
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 110 455 290" fill="none">`+
+    `<g transform="translate(260 380)" stroke="${stroke}" stroke-width="${sw}" fill="none" stroke-linejoin="round" stroke-linecap="round">`+
+    p+`<path d="M -22 0 Q 0 -130 0 -250" stroke-width="${(sw*0.55).toFixed(2)}" opacity="0.65"></path>`+
+    `</g></svg>`;
+}
+function loadMotif(stroke, sw){
+  return new Promise(res=>{ const img=new Image();
+    img.onload=()=>res(img);
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(motifSVG(stroke,sw)); });
+}
+const MOTIF_AR = 455/290; // width/height of viewBox
+
+function measureWord(fontPx, tracking){
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.font = `500 ${fontPx}px Newsreader, serif`; ctx.letterSpacing = tracking+"px";
+  const wMain = ctx.measureText("Agavi").width;
+  const wDot = ctx.measureText(".").width;
+  const m = ctx.measureText("Agavi.");
+  return { wMain, wDot, w: wMain+wDot, asc:m.actualBoundingBoxAscent, desc:m.actualBoundingBoxDescent };
+}
+function drawWord(ctx, x, baseY, fontPx, tracking, main, dot){
+  ctx.font = `500 ${fontPx}px Newsreader, serif`; ctx.letterSpacing = tracking+"px";
+  ctx.textBaseline = "alphabetic";
+  const wMain = ctx.measureText("Agavi").width;
+  ctx.fillStyle = main; ctx.fillText("Agavi", x, baseY);
+  ctx.fillStyle = dot;  ctx.fillText(".", x+wMain, baseY);
+}
+
+// ── ICON: agave motif only, transparent, near-square padded ──
+async function buildIcon(stroke){
+  const img = await loadMotif(stroke, 2.0);
+  const pad = 60;
+  const artW = 720, artH = artW/MOTIF_AR;
+  const cw = artW + pad*2, ch = artH + pad*2;
+  const cv = document.createElement("canvas");
+  cv.width = cw*S/2; cv.height = ch*S/2; // motif is vector; 2x plenty
+  const ctx = cv.getContext("2d");
+  ctx.scale(cv.width/cw, cv.height/ch);
+  ctx.drawImage(img, pad, pad, artW, artH);
+  return cv;
+}
+
+// ── LOCKUP: motif above, wordmark below, centered ──
+async function buildLockup(stroke, main, dot){
+  const img = await loadMotif(stroke, 2.2);
+  const pad = 70;
+  const motifW = 560, motifH = motifW/MOTIF_AR;
+  const fontPx = 200, tracking = -fontPx*0.01;
+  const gap = 30;
+  const w = measureWord(fontPx, tracking);
+  const contentW = Math.max(motifW, w.w);
+  const cw = contentW + pad*2;
+  const ch = pad + motifH + gap + (w.asc + w.desc) + pad;
+  const cv = document.createElement("canvas");
+  cv.width = Math.ceil(cw*S/2); cv.height = Math.ceil(ch*S/2);
+  const ctx = cv.getContext("2d");
+  ctx.scale(cv.width/cw, cv.height/ch);
+  ctx.drawImage(img, (cw-motifW)/2, pad, motifW, motifH);
+  const baseY = pad + motifH + gap + w.asc;
+  drawWord(ctx, (cw - w.w)/2, baseY, fontPx, tracking, main, dot);
+  return cv;
+}
+
+// ── WORDMARK: "Agavi." only ──
+async function buildWordmark(main, dot){
+  const fontPx = 300, tracking = -fontPx*0.01, pad = fontPx*0.32;
+  const w = measureWord(fontPx, tracking);
+  const cw = w.w + pad*2, ch = w.asc + w.desc + pad*2;
+  const cv = document.createElement("canvas");
+  cv.width = Math.ceil(cw*S); cv.height = Math.ceil(ch*S);
+  const ctx = cv.getContext("2d");
+  ctx.scale(S,S);
+  drawWord(ctx, pad, pad + w.asc, fontPx, tracking, main, dot);
+  return cv;
+}
+
+const ASSETS = [
+  { id:"agavi-icon-light",    label:"Agave icon — light",   sub:"Stripe icon slot",         swatch:"sw-dark", maxH:150, build:()=>buildIcon(C.bone) },
+  { id:"agavi-lockup-light",  label:"Lockup — light",        sub:"Stripe logo slot",         swatch:"sw-dark", maxH:170, build:()=>buildLockup(C.bone, C.bone, C.terracotta) },
+  { id:"agavi-wordmark-light",label:"Wordmark — light",      sub:"text-only alternative",    swatch:"sw-dark", maxH:64,  build:()=>buildWordmark(C.bone, C.terracotta) },
+  { id:"agavi-icon-dark",     label:"Agave icon — dark",     sub:"for white surfaces",       swatch:"sw-bone", maxH:150, build:()=>buildIcon(C.agave) },
+  { id:"agavi-lockup-dark",   label:"Lockup — dark",         sub:"for white surfaces",       swatch:"sw-bone", maxH:170, build:()=>buildLockup(C.agave, C.agave, C.terracotta) },
+  { id:"agavi-wordmark-dark", label:"Wordmark — dark",       sub:"for white surfaces",       swatch:"sw-bone", maxH:64,  build:()=>buildWordmark(C.agave, C.terracotta) },
+];
+
+window.__assets = {};
+function download(id){ const a=document.createElement("a"); a.href=window.__assets[id]; a.download=id+".png"; a.click(); }
+
+document.fonts.load('500 300px Newsreader').then(()=>document.fonts.ready).then(async ()=>{
+  const grid = document.getElementById("assetGrid");
+  for(const a of ASSETS){
+    const cv = await a.build();
+    const url = cv.toDataURL("image/png");
+    window.__assets[a.id] = url;
+
+    const cell = document.createElement("div"); cell.className="cell";
+    const sw = document.createElement("div"); sw.className="swatch "+a.swatch;
+    const cwrap = document.createElement("div"); cwrap.className="canv-wrap";
+    const img = new Image(); img.className="render"; img.src=url; img.style.maxHeight=a.maxH+"px";
+    cwrap.appendChild(img); sw.appendChild(cwrap);
+    const meta = document.createElement("div"); meta.className="meta";
+    meta.innerHTML = `<div class="name">${a.label}<span>${a.id}.png · ${a.sub}</span></div>`;
+    const btn = document.createElement("button"); btn.className="dl"; btn.textContent="Download PNG";
+    btn.onclick=()=>download(a.id); meta.appendChild(btn);
+    cell.appendChild(sw); cell.appendChild(meta); grid.appendChild(cell);
+  }
+  document.getElementById("mockLogo").src = window.__assets["agavi-lockup-light"];
+  window.__ready = true;
+});
+</script>
+</body>
+</html>

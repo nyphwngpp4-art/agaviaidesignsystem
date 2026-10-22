@@ -1,14 +1,28 @@
+/* Agavi — Effects: shadows, transitions, motion
+   The paper aesthetic uses almost no shadow at rest — structure comes from
+   hairline rules. Shadows appear only on hover (soft, tinted with ink) to
+   lift a card off the page. Motion is calm and eased, never bouncy. */
+
 :root {
+  /* ── Shadows (hover-lift only; ink-tinted, never gray) ── */
   --shadow-none:   none;
-  --shadow-lift:   0 24px 44px -28px rgba(26, 31, 26, 0.32);
-  --shadow-tier:   0 30px 50px -30px rgba(26, 31, 26, 0.38);
+  --shadow-lift:   0 24px 44px -28px rgba(26, 31, 26, 0.32); /* phase / small card hover */
+  --shadow-tier:   0 30px 50px -30px rgba(26, 31, 26, 0.38); /* pricing tier hover */
   --shadow-nav:    0 1px 0 var(--rule), 0 12px 32px -20px rgba(26, 31, 26, 0.35);
-  --glow-spot: rgba(184, 85, 45, 0.07);
-  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast:   0.15s;
-  --dur-mid:    0.35s;
-  --dur-slow:   0.9s;
-  --reveal-shift: 26px;
-  --reveal-blur:  5px;
+
+  /* ── Cursor spotlight (terracotta glow on cards) ── */
+  --glow-spot: rgba(184, 85, 45, 0.07); /* @kind color */
+
+  /* ── Easing ── */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */ /* the house curve — reveals, lifts */
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */ /* carousel / slides */
+
+  /* ── Durations ── */
+  --dur-fast:   0.15s; /* @kind other */ /* color / hover states */
+  --dur-mid:    0.35s; /* @kind other */ /* lifts, nav condense */
+  --dur-slow:   0.9s;  /* @kind other */ /* scroll reveals */
+
+  /* ── Reveal transform ── */
+  --reveal-shift: 26px; /* @kind spacing */
+  --reveal-blur:  5px;  /* @kind spacing */
 }

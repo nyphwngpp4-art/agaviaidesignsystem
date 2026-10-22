@@ -1,31 +1,51 @@
+/* Agavi — Typography tokens
+   Three voices, each with a strict job:
+   · Newsreader (serif)     — display, headings, ledes. Italic = emphasis.
+   · Inter Tight (sans)     — body copy, buttons, UI. Feature settings ss01/cv11.
+   · JetBrains Mono (mono)  — kickers, stamps, tags, labels, numeric meta.
+   Headings run tight (letter-spacing negative). Mono labels run wide + UPPERCASE. */
+
 :root {
+  /* ── Families ── */
   --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
   --font-sans:  "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --fw-light:    300;
-  --fw-regular:  400;
-  --fw-medium:   500;
-  --fw-semibold: 600;
-  --fw-bold:     700;
-  --text-display: 88px;
+
+  /* ── Weights ── */
+  --fw-light:    300; /* @kind font */ /* serif ledes / quotes */
+  --fw-regular:  400; /* @kind font */ /* serif headings, body */
+  --fw-medium:   500; /* @kind font */ /* buttons, nav, mono labels */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ── Display / heading scale (serif) ── */
+  --text-display: 88px; /* hero H1 */
   --text-h1:      60px;
-  --text-h2:      52px;
-  --text-h3:      30px;
+  --text-h2:      52px; /* section heads */
+  --text-h3:      30px; /* card titles */
   --text-h4:      22px;
-  --lh-display:   0.97;
-  --lh-heading:   1.05;
+  --lh-display:   0.97; /* @kind other */ /* tight display leading */
+  --lh-heading:   1.05; /* @kind other */
   --ls-display:  -0.03em;
   --ls-heading:  -0.02em;
+
+  /* ── Lede (serif italic) ── */
   --text-lede:    21px;
-  --lh-lede:      1.48;
+  --lh-lede:      1.48; /* @kind other */
+
+  /* ── Body (sans) ── */
   --text-body-lg: 16px;
   --text-body:    15px;
   --text-body-sm: 13.5px;
-  --lh-body:      1.65;
+  --lh-body:      1.65; /* @kind other */
+
+  /* ── Mono label / kicker ── */
   --text-label:   11px;
   --text-label-sm:10px;
-  --ls-label:     0.14em;
+  --ls-label:     0.14em; /* wide tracking */
   --ls-label-lg:  0.18em;
-  --serif-optical: auto;
-  --sans-features: "ss01", "cv11";
+
+  /* ── Optical / rendering ── */
+  --serif-optical: auto;             /* @kind other */ /* font-optical-sizing */
+  --sans-features: "ss01", "cv11";   /* @kind other */ /* Inter Tight stylistic sets */
 }

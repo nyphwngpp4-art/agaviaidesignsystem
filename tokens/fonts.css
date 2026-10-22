@@ -1,1 +1,9 @@
+/* Agavi — Webfonts
+   All three families are Google Fonts. Consumers get them via this CDN import.
+   Newsreader   — serif display / editorial voice (300/400/500, roman + italic)
+   Inter Tight  — sans body & UI (400/500/600/700)
+   JetBrains Mono — mono labels, kickers, stamps (400/500)
+   NOTE: served from Google's CDN, not self-hosted. Swap to @font-face + local
+   .woff2 files if you need a fully offline bundle. */
+
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");

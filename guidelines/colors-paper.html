@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Paper / bone surfaces" subtitle="Warm off-white page stock — never pure white" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body { margin: 0; font-family: var(--font-mono); background: var(--bone); }
+    .row { display: grid; grid-template-columns: repeat(3, 1fr); height: 150px; }
+    .sw { display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box; }
+    .sw .name { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+    .sw .hex { font-size: 11px; color: var(--ink-mute); margin-top: 3px; }
+    .b  { background: var(--bone); border-right: 1px solid var(--rule); }
+    .b2 { background: var(--bone-2); border-right: 1px solid var(--rule); }
+    .b3 { background: var(--bone-3); }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw b"><span class="name">Bone</span><span class="hex">#f3eee4 · page</span></div>
+    <div class="sw b2"><span class="name">Bone-2</span><span class="hex">#ebe4d4 · raised</span></div>
+    <div class="sw b3"><span class="name">Bone-3</span><span class="hex">#ded4bf · sunken</span></div>
+  </div>
+</body>
+</html>

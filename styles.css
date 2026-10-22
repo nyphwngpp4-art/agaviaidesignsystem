@@ -1,3 +1,7 @@
+/* Agavi Design System — global entry point.
+   Consumers link THIS file. It only @imports; no rules live here.
+   Everything reachable from these imports (tokens + @font-face) ships. */
+
 @import "./tokens/fonts.css";
 @import "./tokens/colors.css";
 @import "./tokens/typography.css";

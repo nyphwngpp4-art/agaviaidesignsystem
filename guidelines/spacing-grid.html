@@ -1,0 +1,36 @@
+<!-- @dsCard group="Spacing" viewport="700x210" name="Grid & hairlines" subtitle="60px gutters · 80px stamp column · sharp cells" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body { margin: 0; background: var(--bone); color: var(--ink); font-family: var(--font-sans); }
+    .frame { padding: 22px 60px; }
+    .head { display: grid; grid-template-columns: 80px 1fr; gap: 48px; }
+    .stamp { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+      color: var(--ink-mute); padding-top: 6px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule-strong);
+      margin-top: 16px; }
+    .cell { padding: 22px 18px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink-mute); }
+    .cell + .cell { border-left: 1px solid var(--rule); }
+    .note { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+      color: var(--ink-faint); margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="head">
+      <div class="stamp">AGV—00</div>
+      <div style="font-family:var(--font-serif); font-size:28px; letter-spacing:-0.02em;">The printed grid.</div>
+    </div>
+    <div class="grid">
+      <div class="cell">Cell one</div>
+      <div class="cell">Cell two</div>
+      <div class="cell">Cell three</div>
+    </div>
+    <div class="note">60px gutters · 80px stamp column · 48px grid gap · hairline-divided cells · square corners</div>
+  </div>
+</body>
+</html>
